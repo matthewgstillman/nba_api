@@ -1,0 +1,15 @@
+body{
+    background-color: #006D75;
+    color: black;
+}
+
+.container{
+     background-color: black;
+     color:white;
+     border-radius: 10px;
+     margin-bottom: 10px;
+}
+
+a{
+    color: white;
+}

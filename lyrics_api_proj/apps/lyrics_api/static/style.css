@@ -1,0 +1,20 @@
+body{
+    background-color: #002A5C;
+    color:#4495D1;
+}
+
+.container{
+     background-color: #4495D1;
+     color: black;
+     border-radius: 10px;
+     margin-bottom: 10px;
+}
+
+a{
+    color: white;
+}
+
+
+li a{
+    color: #F9A01B;
+}

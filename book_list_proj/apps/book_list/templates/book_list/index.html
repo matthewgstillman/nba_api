@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Book List</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Book List</h1>
+            {% for book in books %}
+                <br>
+                <h3>Title: {{ book.title }} </h3>
+                <h3>Author: {{ book.author }} </h3>
+                <br>
+            {% endfor %}
+            {% for author in authors %}
+                <br>
+                <h3>Name: {{ author.name }} </h3>
+                <br>
+            {% endfor %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dojo Ninjas</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Dojos</h1>
+            {% for dojo in dojos %}
+                <h1>Dojo Location: {{ dojo.location }}</h1>
+                <h1>Ninjas: {{ dojo.student.first_name }} {{ dojo.student.last_name }}</h1>
+            {% endfor %}
+            <br>
+            <h1>Ninjas</h1>
+            {% for ninja in ninjas %}
+                <h1> {{ ninja.first_name }} {{ ninja.last_name }}</h1>
+            {% endfor %}
+            <br>
+        </div>
+    </body>
+</html>

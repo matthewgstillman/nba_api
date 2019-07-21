@@ -1,0 +1,21 @@
+body{
+    background-color: #0C2340;
+    color:#00685E;
+}
+
+.container{
+     background-color: #00685E;
+     color: white;
+     border: 3px solid #8A8D8F;
+     border-radius: 10px;
+     margin-bottom: 10px;
+}
+
+a{
+    color: white;
+}
+
+
+li a{
+    color: #8A8D8F;
+}

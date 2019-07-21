@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>SMTP EMAIL SERVER</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Susan Lyons LCSW has Retired </h1>
+        <br>
+        {% load static %}
+        <img class="picture" class="img-rounded" src="{% static "susan_lyons_photo.jpg" %}" alt="My image"/>
+        <br>
+        <div class="container">
+            <h1>Susan Lyons, pscyhotherapist in Salt Lake City, Utah, closed her practice in July of 2017. She no longer sees psychtherapy clients.</h1>
+            <br>
+            <h1>If you should need to contact Susan, please do below.</h1>
+            <br>
+            <h1>Contact</h1>
+            <form role="form" action="" method="POST">
+                {% csrf_token %}
+                <button type="submit">Submit</button>
+            </form>
+            <br>
+        </div>
+    </body>
+</html>

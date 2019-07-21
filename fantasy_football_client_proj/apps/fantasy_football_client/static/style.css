@@ -1,0 +1,19 @@
+body{
+    background-color: #024;
+    color:#FB4F14;
+}
+
+.container{
+     background-color: #FB4F14;
+     color: white;
+     border-radius: 10px;
+     margin-bottom: 10px;
+}
+
+a{
+    color: white;
+}
+
+
+li a{
+    color: #FB4F14;;

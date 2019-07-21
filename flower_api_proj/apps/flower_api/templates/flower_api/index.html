@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock%}
+
+
+{% block content %}
+<div class="container">
+    <h1>Flower API</h1>
+    {% for key, value in flowers.iteritems %}
+        <h2>{{ key }}</h2>
+        <h5>Flavors</h5>
+        {% for flavor in value.flavors %}
+        <h6>{{ flavor }}</h6>
+        {% endfor %}
+        <h5>Breed </h5>
+        <h6>{{ value.race.title }}</h6>
+        <h6>ID: {{ value.id }}</h6>
+        <h5>Medical Effects</h5>
+        {% for effects in value.effects.medical %}
+        <h6>{{ effects }}</h6>
+        {% endfor %}
+        <h5>Positive Effects</h5>
+        {% for effects in value.effects.positive %}
+        <h6>{{ effects }}</h6>
+        {% endfor %}
+        <h5>Negative Effects</h5>
+        {% for effects in value.effects.negative %}
+        <h6>{{ effects }}</h6>
+        {% endfor %}
+    {% endfor %}
+</div>
+{% endblock %}
