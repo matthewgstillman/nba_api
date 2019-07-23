@@ -3,4 +3,5 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index),
     url(r'^players$', views.players),
+    url(r'^stats$', views.stats),
 ]
