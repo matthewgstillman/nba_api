@@ -45,7 +45,11 @@ def index(request):
             "position": position,
             "player id": player_id
         }
-    return render(request, 'nba_api/index.html', players)
+        context = {
+            "nba_players": nba_players,
+            "players": players,
+        }
+        return render(request, 'nba_api/index.html', context)
 
 def players(request):
     return render(request, 'nba_api/players.html')
