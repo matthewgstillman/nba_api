@@ -1,21 +1,53 @@
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>NBA API - Stats</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-        crossorigin="anonymous">
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 </head>
 
 <body>
     <h1>NBA API - Stats</h1>
     <div class="container">
         <h1>NBA API - Go Jazz</h1>
+        {% for stat in stats %}
+        <h6>{{ stat }}</h6>
+        {% endfor %}
+        <br>
+        <br> {% for item in data %}
+        <h6>{{item}}</h6>
+        <h6>{{item.player}}</h6>
+        <h6>{{item.player.first_name}} {{item.player.last_name}}</h6>
+        <h6>Position: {{item.player.position}}</h6>
+        <h6>Height: {{item.player.height_feet}}'{{item.player.height_feet}}"</h6>
+        <h6>Weight: {{item.player.weight_pounds}} pounds</h6>
+        <h6>{{item.pts}} points</h6>
+        <h6>{{item.ast}} assists</h6>
+        <h6>{{item.dreb}} defensive rebounds</h6>
+        <h6>{{item.oreb}} offensive rebounds</h6>
+        <h6>{{item.min}} time played</h6>
+        <h6>{{item.ftm}}/{{item.fta}} FTS</h6>
+        <h6>{{item.pf}} fouls</h6>
+        <h6>{{item.blk}} blocks</h6>
+        <h6>{{item.stl}} steals</h6>
+        <h6>{{item.fgm}}/{{item.fga}} field goals</h6>
+        <h6>{{item.fg3m}}/{{item.fg3a}} 3 point field goals</h6>
+        <h6>Field Goal Percentage: {{item.fg_pct}}%</h6>
+        <h3>Game Stats: {{item.game}}</h3>
+        <h6>Game Status: {{item.game.status}}</h6>
+        <h6>Visiting Team Score: {{item.game.visitor_team_score}}</h6>
+        <h6>Home: Team Score: {{item.game.home_team_score}}</h6>
+        <h3>Team: {{item.team}}</h3>
+        <h3>Team Name: {{item.team.city}} {{item.team.name}}</h3>
+        <h3>Conference: {{item.team.conference}}</h3>
+        <h6>Division: {{item.team.division}}</h6>
+        <h6>Abbreviation: {{item.team.abbreviation}}</h6>
+        <h6>Full Team Name: {{item.team.full_name}}</h6>
+        {% endfor%}
     </div>
     <script src="" async defer></script>
 </body>
+
 </html>

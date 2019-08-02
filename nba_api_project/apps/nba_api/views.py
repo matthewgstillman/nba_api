@@ -127,4 +127,10 @@ def stats(request):
         team_id = data[i]['team']['id']
         turnovers = data[i]['turnover']
         print("My name is {} {}, and I play {} for the {}".format(player_first_name, player_last_name, player_position, team_full_name))
-    return render(request, 'nba_api/stats.html')
+
+        context = {
+            'response': response,
+            'stats': stats,
+            'data': data
+        }
+    return render(request, 'nba_api/stats.html', context) 
