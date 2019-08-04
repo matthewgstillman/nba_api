@@ -109,6 +109,8 @@ def stats(request):
         visitor_team_id = data[i]['game']['visitor_team_id']
         time = data[i]['game']['time']
         date = data[i]['game']['date']
+        formatted_date = (date[5:9] + "-" + date[0:4])
+        print("The formatted date is {}".format(formatted_date))
         home_team_score = data[i]['game']['home_team_score']
         box_score_id = data[i]['game']['id']
         postseason = data[i]['game']['postseason']
