@@ -50,6 +50,41 @@ def index(request):
             "players": players,
         }
         return render(request, 'nba_api/index.html', context)
+def games(request):
+    gamesDict = {}
+    response = requests.get('https://www.balldontlie.io/api/v1/games')
+    games = response.json()
+    # print(games)
+    data = games['data']
+    print(data)
+    for i in range(0, len(data)):
+        print(data[i])
+        game_status = data[i]['status']
+        home_team = data[i]['home_team']
+        print(home_team)
+        home_team_conference = data[i]['home_team']['conference']
+        home_team_city = data[i]['home_team']['city']
+        home_team_name = data[i]['home_team']['name']
+        home_team_division = data[i]['home_team']['division']
+        home_team_abbreviation = data[i]['home_team']['abbreviation']
+        home_team_full_name = data[i]['home_team']['full_name']
+        home_team_id = data[i]['home_team']['id']
+        visitor_team = data[i]['visitor_team']
+        print(visitor_team)
+        visitor_team_conference = visitor_team['conference']
+        visitor_team_city = visitor_team['city']
+        visitor_team_name = visitor_team['name']
+        visitor_team_division = visitor_team['division']
+        visitor_team_abbreviation = visitor_team['abbreviation']
+        visitor_team_full_name = visitor_team['full_name']
+        visitor_team_id = visitor_team['id']
+        print("Game Status: {}".format(game_status))
+    context = {
+        'response': response,
+        'games': games,
+        'data': data
+    }
+    return render(request, 'nba_api/games.html', context)
 
 def players(request):
     return render(request, 'nba_api/players.html')

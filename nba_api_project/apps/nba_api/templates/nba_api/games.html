@@ -1,0 +1,43 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>NBA API - Games</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    <h1>NBA API - Stats</h1>
+    <div class="container">
+        <h1>NBA API - Go Jazz</h1>
+        <h2>Games</h2>
+        <!--<h6>{{data}}</h6>-->
+        {% for game in data %}
+        <h2>{{game}}</h2>
+        <h6>Game Status: {{game.status}}</h6>
+        <h6>Home Team: {{game.home_team}}</h6>
+        <h6>Home Team Conference: {{game.home_team.conference}}</h6>
+        <h6>Home Team City: {{game.home_team.city}}</h6>
+        <h6>Home Team Name: {{game.home_team.name}}</h6>
+        <h6>Home Team Division: {{game.home_team.division}}</h6>
+        <h6>Home Team Abbreviation: {{game.home_team.abbreviation}}</h6>
+        <h6>Home Team ID: {{game.home_team.id}}</h6>
+        <h6>Visiting Team: {{game.visitor_team}}</h6>
+        <h6>Visiting Team Conference: {{game.visitor_team.conference}}</h6>
+        <h6>Visiting Team City: {{game.visitor_team.city}}</h6>
+        <h6>Visiting Team Name: {{game.visitor_team.name}}</h6>
+        <h6>Visiting Team Division: {{game.visitor_team.division}}</h6>
+        <h6>Visiting Team Abbreviation: {{game.visitor_team.abbreviation}}</h6>
+        <h6>Visiting Team ID: {{game.visitor_team.id}}</h6>
+        <h6>Visiting Team Score: {{game.visitor_team_score}}</h6>
+        <h6>Home Team Score: {{game.home_team_score}}</h6>
+        <h6></h6>
+        {% endfor %}
+        <br>
+    </div>
+    <script src="" async defer></script>
+</body>
+
+</html>
